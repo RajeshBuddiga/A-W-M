@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aditya Workers Portal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600' rel='stylesheet' type='text/css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.3/paper-full.min.js'></script>
+    <link rel='stylesheet' href='/stylesheets/proctor.css' />
+    <script src='/javascripts/proctor.js' ></script>
+  </head>
+  <body ng-app="proctor" ng-controller="myproctor">
+    <div class="wrapper">
+    <div class="logo"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr8EAMhEdCmJq9zgZvmpb3x97TDT_eVTZD3g&usqp=CAU" alt=""> </div>
+    <div class="text-center mt-4 name"> A-W-M Proctor </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center"> <span class='fas fa-user-plus' style='font-size:20px'></span> <input type="email" name="userName" id="userName" placeholder="Email" ng-model="user.email" autocomplete="off"> </div>
+        <div class="form-field d-flex align-items-center"> <span class="fas fa-key" style='font-size:20px'></span> <input type="password" name="password" id="pwd" placeholder="Password" ng-model="user.password"> </div> 
+        <button type="button" class="btn mt-3" ng-click="login(user)">Login</button>
+    </form>
+    <!-- <div class="text-center fs-6"> <a href="#">Forget password?</a> or <a href="#">Sign up</a> </div> -->
+</div>
+  </body>
+</html>
+

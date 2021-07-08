@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aditya Workers Portal</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <script src='/javascripts/admin.js' ></script>
+  </head>
+  <body ng-app="admin" ng-controller="myadmin">
+    <div class="wrapper">
+    <div class="logo"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBkmpxa41SDqTH1fkEuYMdIl-rHQtuxulBqQ&usqp=CAU" alt=""> </div>
+    <div class="text-center mt-4 name"> A-W-M Admin </div>
+    <form class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center"> <span class='fas fa-user-shield' style='font-size:20px'></span> <input type="text" name="userName" id="userName" placeholder="Username" ng-model="user.email" autocomplete="off"> </div>
+        <div class="form-field d-flex align-items-center"> <span class="fas fa-key" style='font-size:20px'></span> <input type="password" name="password" id="pwd" placeholder="Password" ng-model="user.password"> </div> 
+        <button type="button" class="btn mt-3"  ng-click="login(user)">Login</button>
+    </form>
+    <!-- <div class="text-center fs-6"> <a href="#">Forget password?</a> or <a href="#">Sign up</a> </div> -->
+</div>
+  </body>
+</html>
+

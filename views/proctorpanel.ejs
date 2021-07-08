@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AWM Proctor Panel</title>
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src='/javascripts/proctorpanel.js' ></script>
+    <link rel='stylesheet' href='/stylesheets/proctorpanel.css'>
+  </head>
+  <body ng-app="proctorpanel" ng-controller="myproctorpanel">
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left" style="color: black">
+                        <img style="height: 40%;width: 100%" src="/images/h4.gif" alt=""/>
+                        <h3>Welcome</h3>
+                        <h4><p><b>AWM Proctor</b></p></h4>
+                        <!-- <input type="submit" name="" value="Login"/> --><br/>
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <!-- <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
+                            </li>
+                        </ul> -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Enter Worker Details</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Worker Name *" value="" ng-model="worker.name" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control" placeholder="Mobile Number *" value="" maxlength="10" minlength="10" ng-model="worker.mobilenumber" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="tel" class="form-control" placeholder="Aadhaar Number *" maxlength="12" minlength="12" value="" ng-model="worker.aadhaarnumber" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="date" class="form-control"  placeholder="Date he joined*" value="" ng-model="worker.date" />
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="male" checked ng-model="worker.gender">
+                                                    <span> Male </span> 
+                                                </label>
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gender" value="female" ng-model="worker.gender">
+                                                    <span>Female </span> 
+                                                            <span ng-switch="worker.gender">
+                                                                <span ng-switch-when="male"></span>
+                                                                <span ng-switch-when="female"></span>
+                                                            </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="time" class="form-control" placeholder="Time he joined *" value="" ng-model="worker.time" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="txtEmpPhone" class="form-control" placeholder="Bus or Self transport *" value="" ng-model="worker.transport" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control" ng-model="worker.role">
+                                                <option class="hidden"  value selected >Select role of worker *</option>
+                                                <option>Plumber</option>
+                                                <option>Carpenter</option>
+                                                <option>Electrician</option>
+                                                <option>Peon</option>
+                                                <option>Farmer</option>
+                                                <option>Gardener</option>
+                                                <option>Others</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Address(Ex-Rajahmundry,Kakinada...) *" value="" ng-model="worker.address" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" class="form-control" placeholder="Upload file *" file-model="worker.fileupload" />
+                                        </div>
+                                        <button type="button" class="btnRegister btn btn-info"  value="Register" ng-click="workersdata(worker)">Register</button>
+                                    </div>
+                                </div>
+                            </div>
+                           <!--  <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <h3  class="register-heading">Apply as a Hirer</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <select class="form-control">
+                                                <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                                <option>What is your Birthdate?</option>
+                                                <option>What is Your old Phone Number</option>
+                                                <option>What is your Pet Name?</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                                        </div>
+                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+  </body>
+</html>
